@@ -1,8 +1,10 @@
-FILES = .gitconfig .vimrc 
+FILES = .gitconfig .vimrc
 ZPREZTO_FILES = .zshrc .zpreztorc
 VSCODE_FILES = settings.json
+WEZTERM_FILES = wezterm.lua
 
 VSCODE_PATH = $$HOME/Library/ApplicationSupport/Code/User
+WEZTERM_PATH = $$HOME/.config/wezterm
 
 PWD := $(shell pwd)
 
@@ -21,6 +23,12 @@ setup:
 	@echo Put vscode dotfiles...
 	for vscodef in $(VSCODE_FILES); do \
 		cp -f $(PWD)/vscode/$$vscodef $(VSCODE_PATH)/$$vscodef; \
+	done
+
+	@echo Put wezterm dotfiles...
+	mkdir -p $(WEZTERM_PATH)
+	for weztermf in $(WEZTERM_FILES); do \
+		cp -f $(PWD)/wezterm/$$weztermf $(WEZTERM_PATH)/$$weztermf; \
 	done
 
 .PHONY:	setup
