@@ -33,3 +33,30 @@ fi
 ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
 PATH="$ANDROID_SDK_ROOT/emulator:$PATH"
+
+# fzf
+eval "$(fzf --zsh)"
+
+# ghq + fzf: Ctrl+G でリポジトリを選択して移動
+function ghq-fzf() {
+  local repo
+  repo=$(ghq list | fzf --preview "ls $(ghq root)/{}" --preview-window=right:50%)
+  if [[ -n "$repo" ]]; then
+    cd "$(ghq root)/$repo"
+  fi
+  zle reset-prompt
+}
+zle -N ghq-fzf
+bindkey '^g' ghq-fzf
+
+# ghq + fzf + code: Ctrl+O でリポジトリを選択して VS Code で開く
+function ghq-fzf-code() {
+  local repo
+  repo=$(ghq list | fzf --preview "ls $(ghq root)/{}" --preview-window=right:50%)
+  if [[ -n "$repo" ]]; then
+    code "$(ghq root)/$repo"
+  fi
+  zle reset-prompt
+}
+zle -N ghq-fzf-code
+bindkey '^o' ghq-fzf-code
