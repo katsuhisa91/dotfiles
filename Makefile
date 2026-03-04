@@ -8,7 +8,15 @@ WEZTERM_PATH = $$HOME/.config/wezterm
 
 PWD := $(shell pwd)
 
+
 setup:
+	@echo Install Prezto if not exists...
+	if [ ! -d "$$HOME/.zprezto" ]; then \
+		git clone --recursive https://github.com/sorin-ionescu/prezto.git "$$HOME/.zprezto"; \
+	fi
+	@echo Link Prezto runcoms...
+	zsh -c 'setopt EXTENDED_GLOB; for rcfile in $$HOME/.zprezto/runcoms/^README.md(.N); do ln -sf $$rcfile $$HOME/.${rcfile:t}; done'
+
 	@echo Making symlinks to dotfiles...
 	for f in $(FILES); do \
 		rm -f $$HOME/$$f; \
@@ -21,6 +29,7 @@ setup:
 	done
 
 	@echo Put vscode dotfiles...
+	mkdir -p $(VSCODE_PATH)
 	for vscodef in $(VSCODE_FILES); do \
 		cp -f $(PWD)/vscode/$$vscodef $(VSCODE_PATH)/$$vscodef; \
 	done

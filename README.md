@@ -1,29 +1,23 @@
 # dotfiles
-This is my dot files.`Makefile` is included to setup them.
 
-Before `make setup`, please install [Prezto](https://github.com/sorin-ionescu/prezto). 
+# dotfiles
 
-```zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```	
+このリポジトリは各種dotfilesの管理用です。セットアップは`make setup`のみで完了します。
 
-```zsh
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-	ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-```
-
-## Make targets
-- `make setup`
-
-Install dot files under $HOME.
-
-After `make setup`, reload .zshrc.
+## セットアップ方法
 
 ```zsh
+make setup
 source ~/.zshrc
 ```
+
+`make setup`で以下が一括で行われます：
+- Preztoのインストール（未インストールの場合）
+- Prezto runcomsのリンク作成
+- dotfilesのシンボリックリンク作成
+- VSCode/WezTermの設定ファイルコピー
+
+詳細はMakefileを参照してください。
 
 ## Author
 [Katsuhisa Kitano](https://twitter.com/katsuhisa__)
