@@ -4,11 +4,13 @@
 
 このリポジトリは各種dotfilesの管理用です。セットアップは`make setup`のみで完了します。
 
+
 ## セットアップ方法
 
+リポジトリのcloneからセットアップまで、以下のワンライナーで一発完了します：
+
 ```zsh
-make setup
-source ~/.zshrc
+git clone https://github.com/katsuhisa91/dotfiles.git ~/dotfiles && cd ~/dotfiles && make setup && source ~/.zshrc
 ```
 
 `make setup`で以下が一括で行われます：
