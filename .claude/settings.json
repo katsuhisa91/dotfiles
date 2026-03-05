@@ -12,9 +12,12 @@
       "Bash(git log *)",
       "Bash(git show)",
       "Bash(git show *)",
+      "Bash(find *)",
+      "Bash(grep *)",
       "Bash(diff *)",
       "Bash(ls)",
       "Bash(ls *)",
+      "Bash(which *)",
       "Bash(cat *)",
       "Bash(head *)",
       "Bash(tail *)",
@@ -41,6 +44,8 @@
       "Bash(playwright *)"
     ],
     "deny": [
+      "Bash(find * -exec *)",
+      "Bash(find * -delete *)",
       "Bash(rm -rf *)",
       "Bash(chmod 777 *)",
       "Bash(curl | sh *)",
