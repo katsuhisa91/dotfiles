@@ -26,6 +26,12 @@ config.color_scheme = "tokyonight_storm"
 config.window_background_opacity = 0.88
 config.macos_window_background_blur = 30
   config.window_decorations = "RESIZE|TITLE"
+config.window_frame = {
+  inactive_titlebar_bg = "#1a1b26",
+  active_titlebar_bg = "#1a1b26",
+  font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
+  font_size = 11.0,
+}
 config.window_padding = {
   left = 12,
   right = 12,
@@ -37,8 +43,8 @@ config.initial_rows = 50
 
 -- タイトルバー透過
 config.window_frame = {
-  inactive_titlebar_bg = "none",
-  active_titlebar_bg = "none",
+  inactive_titlebar_bg = "#1a1b26",
+  active_titlebar_bg = "#1a1b26",
   font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
   font_size = 11.0,
 }
@@ -52,7 +58,7 @@ config.window_background_gradient = {
 -- ============================================================
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 config.tab_bar_at_bottom = false
 config.tab_max_width = 36
