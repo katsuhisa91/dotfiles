@@ -13,6 +13,8 @@
       "Bash(git show)",
       "Bash(git show *)",
       "Bash(diff *)",
+      "Bash(ls)",
+      "Bash(ls *)",
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git * main)",
