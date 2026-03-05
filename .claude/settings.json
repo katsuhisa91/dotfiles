@@ -35,7 +35,10 @@
       "Bash(* --version)",
       "Bash(* -v)",
       "Bash(* -V)",
-      "Bash(* --help *)"
+      "Bash(* --help *)",
+      "mcp__playwright",
+      "Bash(npx @playwright/mcp@latest)",
+      "Bash(playwright *)"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -52,5 +55,10 @@
   },
   "defaultMode": "default",
   "language": "japanese",
+  "enabledPlugins": {
+    "document-skills@anthropic-agent-skills": true,
+    "example-skills@anthropic-agent-skills": true,
+    "playwright@claude-plugins-official": true,
+  },
   "note": "Claude Codeの権限管理。allow/deny/askルールは公式ドキュメントの構文に準拠。プロジェクトルート以外でも .claude/settings.json を置けば効きます。"
 }

@@ -41,9 +41,9 @@ setup:
 		ln -s $(PWD)/wezterm/$$weztermf $(WEZTERM_PATH)/$$weztermf; \
 	done
 
-	@echo Deploy Claude global settings...
+	@echo Link Claude global settings...
 	mkdir -p $$HOME/.claude
-	cp -f $(PWD)/.claude/settings.json $$HOME/.claude/settings.json
-	cp -f $(PWD)/.claude/CLAUDE.md $$HOME/.claude/CLAUDE.md
+	ln -sf $(PWD)/.claude/settings.json $$HOME/.claude/settings.json
+	ln -sf $(PWD)/.claude/CLAUDE.md $$HOME/.claude/CLAUDE.md
 
 .PHONY:	setup
