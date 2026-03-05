@@ -19,6 +19,7 @@
       "Bash(head *)",
       "Bash(tail *)",
       "Bash(wc *)",
+      "Bash(gh api *)",
       "Bash(gh pr list)",
       "Bash(gh pr list *)",
       "Bash(gh pr view)",
