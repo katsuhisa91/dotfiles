@@ -23,12 +23,9 @@ config.line_height = 1.2
 -- ============================================================
 config.color_scheme = "tokyonight_storm"
 
--- ============================================================
--- ウィンドウ
--- ============================================================
 config.window_background_opacity = 0.88
 config.macos_window_background_blur = 30
-config.window_decorations = "RESIZE"
+  config.window_decorations = "RESIZE|TITLE"
 config.window_padding = {
   left = 12,
   right = 12,
