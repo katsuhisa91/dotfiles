@@ -35,6 +35,7 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git * main)",
+      "Bash(git -C * *)",
       "Bash(* --version)",
       "Bash(* -v)",
       "Bash(* -V)",
@@ -50,7 +51,8 @@
       "Bash(chmod 777 *)",
       "Bash(curl | sh *)",
       "Bash(sudo *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git -C * push *)"
     ],
     "ask": [
       "Edit(/**)",
