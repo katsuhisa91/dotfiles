@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(make setup)",
+      "Bash(source ~/.zshrc)",
+      "Bash(git status)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git * main)",
+      "Bash(* --version)",
+      "Bash(* --help *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(chmod 777 *)",
+      "Bash(curl | sh *)",
+      "Bash(sudo *)",
+      "Bash(git push *)"
+    ],
+    "ask": [
+      "Edit(/**)",
+      "Write(/**)",
+      "Bash(*)"
+    ]
+  },
+  "defaultMode": "default",
+  "language": "japanese",
+  "note": "Claude Codeの権限管理。allow/deny/askルールは公式ドキュメントの構文に準拠。プロジェクトルート以外でも .claude/settings.json を置けば効きます。"
+}
