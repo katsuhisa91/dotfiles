@@ -34,10 +34,11 @@ setup:
 		cp -f $(PWD)/vscode/$$vscodef $(VSCODE_PATH)/$$vscodef; \
 	done
 
-	@echo Put wezterm dotfiles...
+	@echo Link wezterm dotfiles...
 	mkdir -p $(WEZTERM_PATH)
 	for weztermf in $(WEZTERM_FILES); do \
-		cp -f $(PWD)/wezterm/$$weztermf $(WEZTERM_PATH)/$$weztermf; \
+		rm -f $(WEZTERM_PATH)/$$weztermf; \
+		ln -s $(PWD)/wezterm/$$weztermf $(WEZTERM_PATH)/$$weztermf; \
 	done
 
 	@echo Deploy Claude global settings...
