@@ -5,6 +5,7 @@
       "Bash(make setup)",
       "Bash(source ~/.zshrc)",
       "Bash(git status)",
+      "Bash(diff *)",
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git * main)",
