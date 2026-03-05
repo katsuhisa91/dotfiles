@@ -1,7 +1,5 @@
 # dotfiles
 
-# dotfiles
-
 このリポジトリは各種dotfilesの管理用です。セットアップは`make setup`のみで完了します。
 
 
