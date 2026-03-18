@@ -10,6 +10,7 @@
       "Bash(diff *)",
       "Bash(ls)",
       "Bash(ls *)",
+      "Bash(ls /*)",
       "Bash(which *)",
       "Bash(cat *)",
       "Bash(head *)",
