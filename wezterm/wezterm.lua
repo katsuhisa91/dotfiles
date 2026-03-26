@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local smart_paste = require("smart_paste")
 local config = wezterm.config_builder()
 
 -- ============================================================
@@ -226,9 +227,9 @@ config.keys = {
   { key = "+", mods = "CMD", action = wezterm.action.IncreaseFontSize },
   { key = "-", mods = "CMD", action = wezterm.action.DecreaseFontSize },
   { key = "0", mods = "CMD", action = wezterm.action.ResetFontSize },
-  -- コピー & ペースト
+  -- コピー
   { key = "c", mods = "CMD", action = wezterm.action.CopyTo("Clipboard") },
-  { key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
+  -- ペースト（CMD+v は smart_paste が上書き）
   -- 検索
   { key = "f", mods = "CMD", action = wezterm.action.Search({ CaseSensitiveString = "" }) },
   -- ウィンドウフルスクリーン
@@ -275,5 +276,10 @@ config.visual_bell = {
   fade_out_duration_ms = 75,
   target = "CursorColor",
 }
+
+-- ============================================================
+-- Smart Paste（画像 → ファイル保存＋パスペースト）
+-- ============================================================
+smart_paste.apply(config)
 
 return config
