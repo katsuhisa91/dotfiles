@@ -9,8 +9,8 @@
       "Bash(grep *)",
       "Bash(diff *)",
       "Bash(ls)",
-      "Bash(ls *)",
-      "Bash(ls /*)",
+      "Bash(ls **)",
+      "Bash(ls -* **)",
       "Bash(which *)",
       "Bash(cat *)",
       "Bash(head *)",
@@ -25,8 +25,8 @@
       "mcp__playwright",
       "Bash(npx @playwright/mcp@latest)",
       "Bash(playwright *)",
-      "mcp__pencil",
-      "WebFetch(*)"
+      "WebFetch(*)",
+      "mcp__pencil"
     ],
     "deny": [
       "Bash(find * -exec *)",
