@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local smart_paste = require("smart_paste")
+local notification = require("notification")
 local config = wezterm.config_builder()
 
 -- ============================================================
@@ -109,6 +110,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
 
   local edge_foreground = background
+  local indicator = notification.get_indicator(tab.active_pane.pane_id)
+  local prefix = indicator ~= "" and "[" .. indicator .. "] " or ""
   local index = string.format(" %d ", tab.tab_index + 1)
   local title = tab.active_pane.title
   if #title > max_width - 8 then
@@ -122,7 +125,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Background = { Color = background } },
     { Foreground = { Color = foreground } },
     { Attribute = { Intensity = tab.is_active and "Bold" or "Normal" } },
-    { Text = index .. title .. " " },
+    { Text = index .. prefix .. title .. " " },
     { Background = { Color = bar_bg } },
     { Foreground = { Color = edge_foreground } },
     { Text = SOLID_RIGHT_ARROW },
@@ -133,7 +136,17 @@ end)
 -- ステータスバー（右側）
 -- ============================================================
 wezterm.on("update-right-status", function(window, pane)
+  -- Claude Code 通知を取り込み、アクティブペインは既読にする
+  notification.ingest()
+  notification.mark_read(pane:pane_id())
+
   local cells = {}
+
+  -- Claude Code 未読通知数
+  local unread = notification.get_unread_count()
+  if unread > 0 then
+    table.insert(cells, { text = string.format(" CC:%d ", unread), fg = "#1a1b26", bg = "#f7768e" })
+  end
 
   -- キーテーブル（モード表示）
   local name = window:active_key_table()
@@ -236,6 +249,10 @@ config.keys = {
   { key = "Enter", mods = "CMD", action = wezterm.action.ToggleFullScreen },
   -- 設定リロード
   { key = "r", mods = "CMD|SHIFT", action = wezterm.action.ReloadConfiguration },
+  -- Claude Code 通知一覧（LEADER+u）
+  { key = "u", mods = "LEADER", action = notification.list_action() },
+  -- Claude Code 最新未読ペインへジャンプ（LEADER+Shift+n）
+  { key = "N", mods = "LEADER", action = notification.jump_action() },
 }
 
 config.key_tables = {
