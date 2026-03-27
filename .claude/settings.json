@@ -4,27 +4,41 @@
     "allow": [
       "Bash(make setup)",
       "Bash(source ~/.zshrc)",
-      "Bash(git status **)",
-      "Bash(git -C ** status **)",
-      "Bash(git log **)",
-      "Bash(git -C ** log **)",
-      "Bash(git diff **)",
-      "Bash(git -C ** diff **)",
-      "Bash(git show **)",
-      "Bash(git branch **)",
-      "Bash(git -C ** branch **)",
-      "Bash(git add **)",
-      "Bash(git -C ** add **)",
-      "Bash(git fetch **)",
-      "Bash(git stash **)",
-      "Bash(git checkout **)",
-      "Bash(git switch **)",
-      "Bash(git restore **)",
-      "Bash(git rebase **)",
-      "Bash(git merge **)",
-      "Bash(git tag **)",
-      "Bash(git remote **)",
-      "Bash(git config **)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git -C * status)",
+      "Bash(git -C * status *)",
+      "Bash(git log)",
+      "Bash(git log *)",
+      "Bash(git -C * log)",
+      "Bash(git -C * log *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git -C * diff)",
+      "Bash(git -C * diff *)",
+      "Bash(git show)",
+      "Bash(git show *)",
+      "Bash(git branch)",
+      "Bash(git branch *)",
+      "Bash(git -C * branch)",
+      "Bash(git -C * branch *)",
+      "Bash(git add *)",
+      "Bash(git -C * add *)",
+      "Bash(git fetch)",
+      "Bash(git fetch *)",
+      "Bash(git stash)",
+      "Bash(git stash *)",
+      "Bash(git checkout *)",
+      "Bash(git switch *)",
+      "Bash(git restore *)",
+      "Bash(git rebase)",
+      "Bash(git rebase *)",
+      "Bash(git merge *)",
+      "Bash(git tag)",
+      "Bash(git tag *)",
+      "Bash(git remote)",
+      "Bash(git remote *)",
+      "Bash(git config *)",
       "Bash(find *)",
       "Bash(grep *)",
       "Bash(diff *)",
@@ -61,8 +75,11 @@
       "mcp__playwright",
       "Bash(npx @playwright/mcp@latest)",
       "Bash(playwright *)",
-      "WebFetch(*)",
-      "mcp__pencil"
+      "WebFetch",
+      "mcp__pencil",
+      "Read",
+      "Glob",
+      "Grep"
     ],
     "deny": [
       "Bash(find * -exec *)",
@@ -79,7 +96,29 @@
     "ask": [
       "Edit(/**)",
       "Write(/**)",
-      "Bash(*)"
+      "Bash"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/wezterm-notify.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/wezterm-notify.sh"
+          }
+        ]
+      }
     ]
   },
   "defaultMode": "default",
