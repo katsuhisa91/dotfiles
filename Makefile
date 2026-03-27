@@ -1,7 +1,7 @@
 FILES = .gitconfig .vimrc
 ZPREZTO_FILES = .zshrc .zpreztorc
 VSCODE_FILES = settings.json
-WEZTERM_FILES = wezterm.lua
+WEZTERM_FILES = wezterm.lua smart_paste.lua notification.lua
 
 VSCODE_PATH = $$HOME/Library/ApplicationSupport/Code/User
 WEZTERM_PATH = $$HOME/.config/wezterm
