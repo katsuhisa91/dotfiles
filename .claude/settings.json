@@ -91,11 +91,6 @@
       "Bash(gh api --method DELETE *)",
       "Bash(gh pr merge *)",
       "Bash(gh pr close *)"
-    ],
-    "ask": [
-      "Edit(/**)",
-      "Write(/**)",
-      "Bash"
     ]
   },
   "hooks": {
@@ -120,12 +115,12 @@
       }
     ]
   },
-  "defaultMode": "default",
-  "language": "japanese",
   "enabledPlugins": {
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": true,
     "playwright@claude-plugins-official": true
   },
+  "language": "japanese",
+  "defaultMode": "auto",
   "note": "Claude Codeの権限管理。allow/deny/askルールは公式ドキュメントの構文に準拠。プロジェクトルート以外でも .claude/settings.json を置けば効きます。"
 }
