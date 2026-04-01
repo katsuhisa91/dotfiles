@@ -45,6 +45,7 @@ setup:
 	mkdir -p $$HOME/.claude
 	ln -sf $(PWD)/.claude/settings.json $$HOME/.claude/settings.json
 	ln -sf $(PWD)/.claude/CLAUDE.md $$HOME/.claude/CLAUDE.md
+	rm -f $$HOME/.claude/hooks
 	ln -sf $(PWD)/.claude/hooks $$HOME/.claude/hooks
 
 .PHONY:	setup
