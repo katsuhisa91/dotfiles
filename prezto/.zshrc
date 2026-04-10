@@ -15,7 +15,7 @@ alias ll="ls -lt"
 alias la="ls -alt"
 alias sss="source ~/.zshrc"
 function mlx_lm.generate() {
-  "$(ghq root)/ml-explore/mlx-lm/.venv/bin/mlx_lm.generate" "$@"
+  "$(ghq root)/github.com/ml-explore/mlx-lm/.venv/bin/mlx_lm.generate" "$@"
 }
 
 # M1 Mac brew
