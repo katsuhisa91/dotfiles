@@ -68,6 +68,7 @@
       "Bash(type *)",
       "Bash(gh api *)",
       "Bash(gh pr *)",
+      "Bash(ghq *)",
       "Bash(* --version)",
       "Bash(* -v)",
       "Bash(* -V)",
@@ -76,10 +77,10 @@
       "Bash(npx @playwright/mcp@latest)",
       "Bash(playwright *)",
       "WebFetch",
-      "mcp__pencil",
       "Read",
       "Glob",
-      "Grep"
+      "Grep",
+      "mcp__pencil"
     ],
     "deny": [
       "Bash(find * -exec *)",
